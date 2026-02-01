@@ -111,7 +111,4 @@ Users can add an expense within a group, select who paid, and split the amount a
 - Missing validations for amount and split
 - Data loss during offline or rotation scenarios
 
----
 
-## Interview-Ready Summary
-This feature was tested using positive, negative, edge, UI, network, and data integrity scenarios to ensure accurate financial calculations, proper validations, stable behavior, and reliable notifications.
