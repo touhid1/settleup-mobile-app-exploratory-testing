@@ -1,68 +1,68 @@
-Test ID,Module,Type of Testing,Test Cases,Expected Result,Actual Result,Test Data,Reproducing Steps,Bugs Screen Shot,Final Status
-TC- 001,Expense Management,Functional,"Create equal split expense with 3 members","Expense saved. Each member charged 33.33/33.33/33.34 (total 100). Balance updated. Notification sent.",Split shows 33.33/33.33/33.33 = 99.99 total,"Group: 'Trip', Members: 3, Amount: 100","1. Open group
+Test ID,Type of Testing,Test Cases Title,Expected Result,Actual Result,Test Data,Reproducing Steps,Bugs Screen Shot,Final Status
+TC-EXP-001,Functional,"Equal Split Calculation Accuracy for 3 Members","Expense saved. Each member charged 33.33/33.33/33.34 (total 100). Balance updated. Notification sent.",Split shows 33.33/33.33/33.33 = 99.99 total,"Group: 'Trip', Members: 3, Amount: 100","1. Open group
 2. Tap Add Expense
 3. Enter 100
 4. Select Equal split
 5. Save","bug_rounding_error.png",Fail
-TC- 002,Expense Management,Functional,Create expense with custom split,"Expense saved. Custom amounts accepted. Total validation works. Balances correct.","Allows saving even if total ≠ expense amount","Group: 'Roommates', Members: 3, Amount: 500, Custom: 200/200/200","1. Add expense amount 500
+TC-EXP-002,Functional,"Custom Split Total Validation Missing","Expense saved. Custom amounts accepted. Total validation works. Balances correct.","Allows saving even if total ≠ expense amount","Group: 'Roommates', Members: 3, Amount: 500, Custom: 200/200/200","1. Add expense amount 500
 2. Choose Custom split
 3. Set 200/200/200
 4. Save","bug_custom_validation.png",Fail
-TC- 003,Expense Management,Functional,Add expense with future date,"Warning message: 'Future date selected'. Option to proceed or change date.",Accepts future date without warning,"Amount: 300, Date: Tomorrow","1. Add expense
+TC-EXP-003,Functional,"Future Date Expense Creation Without Warning","Warning message: 'Future date selected'. Option to proceed or change date.",Accepts future date without warning,"Amount: 300, Date: Tomorrow","1. Add expense
 2. Select tomorrow's date
 3. Save","bug_future_date.png",Fail
-TC- 004,Expense Management,Functional,Add expense with negative amount,"Error: 'Amount cannot be negative'. Save button disabled.",Accepts negative amount,"Amount: -50","1. Enter -50
+TC-EXP-004,Functional,"Negative Amount Input Validation Failure","Error: 'Amount cannot be negative'. Save button disabled.",Accepts negative amount,"Amount: -50","1. Enter -50
 2. Try to save","bug_negative_amount.png",Fail
-TC- 005,Expense Management,Functional,Add expense with zero amount,"Error: 'Amount must be greater than zero'.",Accepts 0 amount,"Amount: 0","1. Enter 0
+TC-EXP-005,Functional,"Zero Amount Expense Creation Allowed","Error: 'Amount must be greater than zero'.",Accepts 0 amount,"Amount: 0","1. Enter 0
 2. Try to save","bug_zero_amount.png",Fail
-TC- 006,Expense Management,Functional,Add expense with very large amount,"Expense saved. App remains stable. Amount formatted with commas.",App freezes with very large amounts,"Amount: 9999999","1. Enter 9999999
+TC-EXP-006,Functional,"Large Amount Handling Causes App Freeze","Expense saved. App remains stable. Amount formatted with commas.",App freezes with very large amounts,"Amount: 9999999","1. Enter 9999999
 2. Save","bug_large_amount.png",Fail
-TC- 007,Expense Management,Functional,Add expense with decimal amount,"Accepts decimals. Rounds to 2 decimal places. Calculations correct.",Rounding issues with multiple decimals,"Amount: 99.999","1. Enter 99.999
+TC-EXP-007,Functional,"Decimal Rounding Inconsistency in Calculations","Accepts decimals. Rounds to 2 decimal places. Calculations correct.",Rounding issues with multiple decimals,"Amount: 99.999","1. Enter 99.999
 2. Save","bug_decimal_rounding.png",Fail
-TC- 008,Expense Management,Functional,Add expense with long description,"Accepts long text. UI handles properly. No truncation in view.",Text overflow in some views,"Description: 500 characters Lorem ipsum","1. Enter long description
+TC-EXP-008,Functional,"Long Description Text Overflow in UI","Accepts long text. UI handles properly. No truncation in view.",Text overflow in some views,"Description: 500 characters Lorem ipsum","1. Enter long description
 2. Save","bug_text_overflow.png",Fail
-TC- 009,Expense Management,Functional,Add expense with emoji in description,"Accepts emojis. Displayed correctly in list and details.",Emoji displayed as squares,"Description: Lunch 🍔 with team 🎉","1. Add emojis in description
+TC-EXP-009,Functional,"Emoji Character Display Corruption","Accepts emojis. Displayed correctly in list and details.",Emoji displayed as squares,"Description: Lunch 🍔 with team 🎉","1. Add emojis in description
 2. Save","bug_emoji_display.png",Fail
-TC- 010,Expense Management,Functional,Add expense without description,"Expense saved with default description or empty.",Accepts without validation,"Description: (empty)","1. Leave description empty
+TC-EXP-010,Functional,"Empty Description Field Accepts Without Validation","Expense saved with default description or empty.",Accepts without validation,"Description: (empty)","1. Leave description empty
 2. Save","bug_empty_description.png",Pass
-TC- 011,Expense Management,Functional,Add expense with receipt attachment,"Receipt attached. Thumbnail visible. Can view full image.",App crashes when attaching photo,"Receipt: test_image.jpg","1. Tap Attach Receipt
+TC-EXP-011,Functional,"Receipt Attachment Causes App Crash","Receipt attached. Thumbnail visible. Can view full image.",App crashes when attaching photo,"Receipt: test_image.jpg","1. Tap Attach Receipt
 2. Take photo
 3. Save","bug_receipt_crash.png",Fail
-TC- 012,Expense Management,Functional,Add expense while offline,"Saved locally. Sync when online. Clear offline indicator.",App freezes completely,"Network: Airplane mode","1. Turn off internet
+TC-EXP-012,Functional,"Offline Mode Freezes App Completely","Saved locally. Sync when online. Clear offline indicator.",App freezes completely,"Network: Airplane mode","1. Turn off internet
 2. Add expense
 3. Save","bug_offline_freeze.png",Fail
-TC- 013,Expense Management,Functional,Add expense with percentage split,"Saves with correct calculations. Validates total = 100%.",Allows total ≠ 100%,"Amount: 1000, Split: 60%/50%","1. Select Percentage split
+TC-EXP-013,Functional,"Percentage Split Validation Bypassed","Saves with correct calculations. Validates total = 100%.",Allows total ≠ 100%,"Amount: 1000, Split: 60%/50%","1. Select Percentage split
 2. Set 60%/50%
 3. Save","bug_percentage_validation.png",Fail
-TC- 014,Expense Management,Functional,Add expense with multiple payers,"Records multiple payers. Net calculations correct.",Calculation errors with multiple payers,"Amount: 1200, Payers: A=700, B=500","1. Select Multiple payers
+TC-EXP-014,Functional,"Multiple Payers Calculation Error","Records multiple payers. Net calculations correct.",Calculation errors with multiple payers,"Amount: 1200, Payers: A=700, B=500","1. Select Multiple payers
 2. Set amounts
 3. Save","bug_multiple_payers.png",Fail
-TC- 015,Expense Management,Functional,Add expense excluding some members,"Only selected members in split. Others marked 'Not involved'.",Excluded members still included in balances,"Exclude member C","1. Unselect member C from split
+TC-EXP-015,Functional,"Excluded Members Still Included in Split","Only selected members in split. Others marked 'Not involved'.",Excluded members still included in balances,"Exclude member C","1. Unselect member C from split
 2. Save","bug_exclude_member.png",Fail
-TC- 016,Expense Management,Functional,Tap Save button multiple times quickly,"Only one expense created. Button disabled after first tap.",Creates duplicate expenses,"Amount: 200","1. Tap Save 5 times rapidly","bug_duplicate_expenses.png",Fail
-TC- 017,Expense Management,UI/UX,Keyboard overlaps input fields,"Form scrolls up. Field remains visible above keyboard.",Keyboard covers description field,"Focus: Description field","1. Tap description field
+TC-EXP-016,Functional,"Duplicate Expense Creation on Rapid Save","Only one expense created. Button disabled after first tap.",Creates duplicate expenses,"Amount: 200","1. Tap Save 5 times rapidly","bug_duplicate_expenses.png",Fail
+TC-EXP-017,UI/UX,"Keyboard Overlap Obscures Input Fields","Form scrolls up. Field remains visible above keyboard.",Keyboard covers description field,"Focus: Description field","1. Tap description field
 2. Observe keyboard","bug_keyboard_overlap.png",Fail
-TC- 018,Expense Management,UI/UX,Screen rotation during expense entry,"Data retained. Layout adjusts properly.",Data lost on rotation,"Fill form, rotate device","1. Fill all fields
+TC-EXP-018,UI/UX,"Screen Rotation Loses Form Data","Data retained. Layout adjusts properly.",Data lost on rotation,"Fill form, rotate device","1. Fill all fields
 2. Rotate device","bug_rotation_data_loss.png",Fail
-TC- 019,Expense Management,UI/UX,Dark mode compatibility,"All text readable. Proper contrast ratios.",Poor contrast in dark mode,"Theme: Dark","1. Enable dark mode
+TC-EXP-019,UI/UX,"Dark Mode Contrast Ratio Issues","All text readable. Proper contrast ratios.",Poor contrast in dark mode,"Theme: Dark","1. Enable dark mode
 2. Add expense","bug_dark_mode.png",Fail
-TC- 020,Expense Management,UI/UX,Accessibility with screen reader,"All elements properly labeled. Logical reading order.",Missing labels for some fields,"TalkBack enabled","1. Enable TalkBack
+TC-EXP-020,UI/UX,"Accessibility Labels Missing in Expense Form","All elements properly labeled. Logical reading order.",Missing labels for some fields,"TalkBack enabled","1. Enable TalkBack
 2. Navigate form","bug_accessibility.png",Fail
-TC- 021,Expense Management,Integration,Notification after adding expense,"All group members receive notification.",No notification sent,"Group with 3 members","1. Add expense
+TC-EXP-021,Integration,"New Expense Notification Not Sent","All group members receive notification.",No notification sent,"Group with 3 members","1. Add expense
 2. Check other devices","bug_no_notification.png",Fail
-TC- 022,Expense Management,Integration,Notification after editing expense,"Members notified of changes.",No notification for edits,"Existing expense","1. Edit expense
+TC-EXP-022,Integration,"Edited Expense Notification Missing","Members notified of changes.",No notification for edits,"Existing expense","1. Edit expense
 2. Save changes","bug_edit_notification.png",Fail
-TC- 023,Expense Management,Integration,Real-time balance update,"Balances update immediately for all members.",Delay in balance sync,"Multi-device setup","1. Add expense on Device A
+TC-EXP-023,Integration,"Real-time Balance Sync Delay","Balances update immediately for all members.",Delay in balance sync,"Multi-device setup","1. Add expense on Device A
 2. Check Device B","bug_balance_sync.png",Fail
-TC- 024,Expense Management,Integration,Expense appears in reports,"New expense included in all reports.",Missing from some report types,"Add expense, generate report","1. Add expense
+TC-EXP-024,Integration,"New Expense Missing from Generated Reports","New expense included in all reports.",Missing from some report types,"Add expense, generate report","1. Add expense
 2. Generate report","bug_report_missing.png",Fail
-TC- 025,Expense Management,Integration,Search finds new expense,"Search by description/amount finds expense.",Not searchable immediately,"Expense: 'Dinner at restaurant'","1. Add expense
+TC-EXP-025,Integration,"Search Functionality Fails for New Expenses","Search by description/amount finds expense.",Not searchable immediately,"Expense: 'Dinner at restaurant'","1. Add expense
 2. Search","bug_search_not_working.png",Fail
-TC- 026,Expense Management,Performance,Add 50+ expenses rapidly,"All saved correctly. No performance degradation.",App becomes slow after 30+,"Create 50 expenses","1. Add 50 expenses quickly","bug_performance.png",Fail
-TC- 027,Expense Management,Performance,Memory usage during expense creation,"Memory usage stable. No leaks.",Memory increases with each expense,"Monitor memory","1. Add 20 expenses
+TC-EXP-026,Performance,"Performance Degradation with Multiple Expenses","All saved correctly. No performance degradation.",App becomes slow after 30+,"Create 50 expenses","1. Add 50 expenses quickly","bug_performance.png",Fail
+TC-EXP-027,Performance,"Memory Leak During Expense Creation","Memory usage stable. No leaks.",Memory increases with each expense,"Monitor memory","1. Add 20 expenses
 2. Check memory","bug_memory_leak.png",Fail
-TC- 028,Expense Management,Performance,Battery consumption,"Reasonable battery usage during operations.",High battery drain,"Monitor battery","1. Add expenses for 30 min
+TC-EXP-028,Performance,"High Battery Consumption During Operations","Reasonable battery usage during operations.",High battery drain,"Monitor battery","1. Add expenses for 30 min
 2. Check battery","bug_battery_drain.png",Fail
-TC- 029,Expense Management,Security,Expense data encryption,"Data encrypted at rest and in transit.",No visible encryption,"Check data storage","1. Add expense
+TC-EXP-029,Security,"Expense Data Encryption Not Implemented","Data encrypted at rest and in transit.",No visible encryption,"Check data storage","1. Add expense
 2. Check local storage","bug_security.png",Pass
-TC- 030,Expense Management,Regression,Previously fixed bugs not reoccurring,"All fixed bugs remain fixed.",Old bugs reappeared,"Regression test suite","1. Execute regression tests","regression_bugs.png",Pass
+TC-EXP-030,Regression,"Previously Fixed Bugs Reappeared","All fixed bugs remain fixed.",Old bugs reappeared,"Regression test suite","1. Execute regression tests","regression_bugs.png",Pass
