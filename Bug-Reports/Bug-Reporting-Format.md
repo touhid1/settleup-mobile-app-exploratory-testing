@@ -28,8 +28,8 @@
 - Member remains in the group
 
 ### Evidence
-- **Screenshot 1:** [member_deleted_ui.png] - Shows member removed from UI
-- **Video:** [member_delete_fail.mp4] (20 seconds) - Complete reproduction
+- **Screenshot 1:** [member_deleted_ui.png] 
+- **Video:** [member_delete_fail.mp4] 
 
 ### Impact Analysis
 - **User Impact:** High - Users cannot permanently remove members
