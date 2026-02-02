@@ -56,7 +56,7 @@ The focus was on identifying **functional bugs, calculation errors, UX issues, d
 ---
 
 
-## 🗂️ Repository Structure
+<!-- ## 🗂️ Repository Structure
 Settle Up - Group Expenses QA Project
 
 │
@@ -82,7 +82,7 @@ Settle Up - Group Expenses QA Project
 ├── MindMap
 │   └── Settle App Mind Map.png
 │
-└── README.md
+└── README.md -->
     
     
 
