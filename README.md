@@ -55,7 +55,26 @@ The focus was on identifying **functional bugs, calculation errors, UX issues, d
 
 ---
 
+## 📁 Repository Structure
 
+     📦 Settle Up - Group Expenses QA Project
+        ┣ 📜 README.md
+        ┣ 📂 Test-Plan
+        ┃ ┗ 📜 Test-Plan.md
+        ┣ 📂 Test-Scenarios
+        ┃ ┗ 📜 Add-Expense-Scenarios.md
+        ┣ 📂 Test-Cases
+        ┃ ┗ 📄 TC_Add_Expense.csv
+        ┣ 📂 Bug-Reports
+        ┃ ┗ 📜 SettleUp-Bug-Report.md
+        ┣ 📂 Risk-Assessment
+        ┃ ┣ 📜 Bug-Reporting-Format.md
+        ┃ ┣ 📜 Add-Expense-Risk-List.md
+        ┃ ┗ 📜 Risk_Matrix.md
+        ┣ 📂 MindMap
+        ┃ ┗ 🖼️ Settle-App-Mind-Map.png
+
+     
 <!-- ## 🗂️ Repository Structure
 Settle Up - Group Expenses QA Project
 
