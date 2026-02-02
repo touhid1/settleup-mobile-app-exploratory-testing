@@ -98,6 +98,6 @@ To validate core expense management features and identify functional, usability,
 ## 9. Approvals
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
-| QA Lead | [Name] |Mallik Galib Shahriar | |
-| Product Manager | [Name] | | |
-| Development Lead | [Name] | | |
+| QA Lead | Mallik Galib Shahriar | | |
+| Product Manager | - | | |
+| Development Lead | - | | |
