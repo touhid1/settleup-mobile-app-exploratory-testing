@@ -73,36 +73,7 @@ The focus was on identifying **functional bugs, calculation errors, UX issues, d
         ┃ ┗ 📜 Risk_Matrix.md
         ┣ 📂 MindMap
         ┃ ┗ 🖼️ Settle-App-Mind-Map.png
-
-     
-<!-- ## 🗂️ Repository Structure
-Settle Up - Group Expenses QA Project
-
-Settle Up - Group Expenses QA Project
-│
-├── Test-Plan
-│   └── Test-Plan.md
-│
-├── Test-Scenarios
-│   └── Add-Expense-Scenarios.md
-│
-├── Test-Cases
-│   └── TC_Add_Expense.csv
-│
-├── Bug-Reports
-│   └── SettleUp-Bug-Report.md
-│
-├── Risk-Assessment
-│   ├── Bug-Reporting-Format.md
-│   ├── Add-Expense-Risk-List.md
-│   └── Risk_Matrix.md
-│
-├── MindMap
-│   └── Settle-App-Mind-Map.png
-│
-└── README.md
-    
-!-->    
+   
 
 ## 🎯 Key Components
 
